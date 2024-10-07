@@ -27,6 +27,8 @@ struct UserInfo <State>{
 }
 
 
+// !TODO Fix this main functioin logicly
+
 fn main() {
 //     let mut locked_values = Values::<Locked>::new(); // Start with a locked state
 
@@ -151,7 +153,7 @@ fn main() {
     // println!("Generated OTP: {}", otp);  // For debugging; remove in production
 
     // Step 2: Specify the recipient email (change this as necessary)
-    let recipient_email = String::from("yasser050699@gmail.com");  // Replace with your actual email
+    let recipient_email = String::from("yasser050699@gmail.com");  
 
     // Step 3: Send the OTP via email
     send_email(recipient_email, otp.clone());
