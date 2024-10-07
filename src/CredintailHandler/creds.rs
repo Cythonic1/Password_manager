@@ -15,7 +15,7 @@ pub struct Creds{
     pub description: String,
 }
 
-const MYPATH:&str ="/home/pythonic/Desktop/rust/password_manager/";
+const MYPATH:&str ="/home/pythonic/Desktop/rust/password_manager/test";
 #[derive(Debug, Clone)] // Derive Clone for Creds so it can be cloned when passed by reference
 pub enum Errors{
     InvalidPassword,

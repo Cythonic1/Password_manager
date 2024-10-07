@@ -13,7 +13,7 @@ use serde::{Serialize, Deserialize};
 #[derive(Debug, Clone, Default, Serialize, Deserialize)] // Derive Clone for Creds so it can be cloned when passed by reference
 pub struct EncryptAES256;
 
-const MYPATH:&str ="/home/pythonic/Desktop/rust/password_manager/";
+const MYPATH:&str ="/home/pythonic/Desktop/rust/password_manager/test";
 #[derive(Debug, Clone)] // Derive Clone for Creds so it can be cloned when passed by as
 pub enum ErrorsEnc{
     InvalidFileFormat(String),
@@ -54,7 +54,6 @@ impl EncryptAES256 {
         
         // create the cipher.
         let cipher = Aes256Cbc::new_from_slices(&key, &iv).expect("can not encrypt");
-
         //Encrypt the data
         let cipher_text = cipher.encrypt_vec(&buffer);
 
@@ -109,6 +108,7 @@ impl EncryptAES256 {
                     .open(output_file) // Open the file specified by output_file
                     .expect("unable to open output file for writing");
                 output_file.write_all(&dec_data);
+                println!("Your Data has been Decrypted: 🔓");
                 Ok(())
             },
             Err(e) => return Err(ErrorsEnc::UnvalidKey(e.to_string())) 

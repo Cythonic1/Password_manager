@@ -11,3 +11,5 @@ block-modes = "0.8"  # Block cipher modes like CBC
 block-padding = "0.2"  # Padding (PKCS7)
 hex = "0.4"      # For converting binary data to hexadecimal
 rand = "0.8"     # For generating random IVs
+lettre = "0.10"  # For sending emails
+dotenv = "0.15"
